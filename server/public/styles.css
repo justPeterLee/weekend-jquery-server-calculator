@@ -1,1 +1,7 @@
-h1{color: red}
+#calc-container{
+    display: flex;
+    gap: 10px;
+}
+.selected{
+    border: 2px solid black;
+ }
