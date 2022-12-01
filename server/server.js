@@ -12,6 +12,7 @@ app.use(express.urlencoded())
 
 app.post('/solve', (req, res)=>{
     console.log('in the post request', req.body)
+
     req.body.currAnswer = calcFunc(req.body).answer;
     history.push(req.body)
     res.send(calcFunc(req.body))
@@ -19,6 +20,7 @@ app.post('/solve', (req, res)=>{
 
 app.get('/history', (req, res)=>{
     console.log('in the get request');
+    
     res.send(history);
 })
 app.listen(PORT, ()=>{

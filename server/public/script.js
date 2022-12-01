@@ -31,12 +31,11 @@ function buttons(){
     else{
         operator = "/"
     }
-    
-    console.log(operator)
 }
 
 //solve equation
 function solve(){
+
     let numObj = {}
     if($('#num1').val()){
         if($('#num2').val()){
@@ -45,7 +44,6 @@ function solve(){
                 numObj.num1 = $('#num1').val();
                 numObj.num2 = $('#num2').val();
                 numObj.operator = operator;
-                console.log(numObj)
 
                 sendAjax(numObj)
             }else{
@@ -62,15 +60,12 @@ function solve(){
 
 //clear function
 function clear(){
-    console.log('clear')
 
     $('#num1').val('');
     $('#num2').val('');
     $('.button-container').children().removeClass('selected');
 
     operator = undefined;
-    console.log(eval('9 + 9'))
-
 }
 
 
@@ -83,7 +78,6 @@ function sendAjax(data){
     }).then(function(response){
         $('#answer').text(`${response.answer}`)
     }).catch(function(response){
-        console.log("failed request", response)
     })
     readAjax()
 }
@@ -98,6 +92,5 @@ function readAjax(){
                 <p>${response[response.length - 1].num1} ${response[response.length - 1].operator} ${response[response.length - 1].num2} = ${response[response.length - 1].currAnswer}</p>
             </li>
         `).appendTo('#history')
-        console.log(response)
     })
 }
