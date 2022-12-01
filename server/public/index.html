@@ -12,10 +12,24 @@
     <script type="text/javascript" src="./script.js"></script>
 </head>
 <body>
-    <h1>hello, world</h1>
+    <h1>Sever Side Calculator</h1>
     <div id="calc-container">
-        <input>
-        <button>submit</button>
+        <input type="number" class="equation-number" id="num1">
+
+
+        <button class="calc-btn" id="add">+</button>
+        <button class="calc-btn" id="sub">-</button>
+        <button class="calc-btn" id="mult">*</button>
+        <button class="calc-btn" id="divid"> /</button>
+
+
+        <input type="number" class="equation-number" id="num2">
+
+        
+        <button class="calc-btn" id="equal">=</button>
+        <button class="calc-btn" id="clear">c</button>
     </div>
+    <h1 id="answer">ANSWER</h1>
+    <ul id="history"></ul>
 </body>
 </html>
