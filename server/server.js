@@ -1,6 +1,6 @@
 const express = require('express');
 
-const calcFunc = require('./module/calcLogic.js');
+const {baseLogic, stretchLogic} = require('./module/calcLogic.js');
 const history = require('./module/history.js');
 
 const app = express();
@@ -13,9 +13,9 @@ app.use(express.urlencoded())
 app.post('/solve', (req, res)=>{
     console.log('in the post request', req.body)
 
-    req.body.currAnswer = calcFunc(req.body).answer;
+    req.body.currAnswer = baseLogic(req.body).answer;
     history.push(req.body)
-    res.send(calcFunc(req.body))
+    res.send(baseLogic(req.body))
 })
 
 app.get('/history', (req, res)=>{
@@ -23,6 +23,15 @@ app.get('/history', (req, res)=>{
     
     res.send(history);
 })
+
+
+
+app.post('/stretch', (req, res)=>{
+    console.log(req.body);
+    console.log(stretchLogic(req.body))
+})
+
+
 app.listen(PORT, ()=>{
     console.log('Your server is listening on port: ', PORT)
 });

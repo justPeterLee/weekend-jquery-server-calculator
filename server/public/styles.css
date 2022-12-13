@@ -2,6 +2,36 @@
     display: flex;
     gap: 10px;
 }
-.selected{
-    border: 2px solid black;
+.op-btn.selected{
+    height: 3rem;
+    width: 3rem;
+
+    color: white;
+    font-size: 25px;
+
+    border: 2px solid royalblue;
+    border-radius: 10px;
+
+    background-color: royalblue;
+ }
+
+ #stretch-btn{
+    display: grid;
+    grid-template-columns: repeat(4, 30px);
+    grid-template-rows: repeat(4, 30px);
+    gap: 2px;
+ }
+
+
+ .op-btn, .calc-btn{
+    height: 3rem;
+    width: 3rem;
+
+    color: royalblue;
+    font-size: 25px;
+
+    border: 2px solid royalblue;
+    border-radius: 10px;
+
+    background-color: white;
  }
